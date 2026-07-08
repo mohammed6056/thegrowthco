@@ -313,11 +313,21 @@ button{ font-family:inherit; }
 
 /* ============ SERVICES ============ */
 .services-grid{
-  display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:22px;
 }
-.services-grid .service-card:nth-child(4){ grid-column:span 1; }
-.services-grid .service-card:nth-child(4),
-.services-grid .service-card:nth-child(5){ /* keep grid */ }
+
+/* Center the last two cards */
+.services-grid .service-card:nth-child(4){
+    grid-column:1 / 2;
+    justify-self:end;
+}
+
+.services-grid .service-card:nth-child(5){
+    grid-column:2 / 3;
+    justify-self:start;
+}
 .service-card{
   position:relative;
   padding:34px 28px; border-radius:var(--radius-lg);
