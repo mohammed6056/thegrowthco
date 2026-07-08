@@ -789,7 +789,7 @@ button{ font-family:inherit; }
 .contact-form select,
 .contact-form textarea{
   padding:14px 16px; border-radius:12px;
-  background:var(--surface); color:var(--text);
+  background:var(--surface); color:#4ae19e;
   border:1px solid var(--border-strong);
   font-family:inherit; font-size:15px;
   transition:border-color .25s, background .25s, box-shadow .25s;
