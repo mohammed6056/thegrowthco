@@ -3,998 +3,681 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammed Sohail Sayyed — Digital Marketer & Web Developer</title>
-  <meta name="description" content="I design and develop conversion-focused websites, SEO systems, and performance campaigns that help brands grow." />
+  <title>Mohammed Sohail Sayyed — Digital Marketing Solutions That Help Your Business Grow</title>
+  <meta name="description" content="Strategic websites, SEO, performance marketing, social media and creative digital solutions built to attract the right audience, generate qualified leads, and drive long-term business growth." />
   <meta name="author" content="Mohammed Sohail Sayyed" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #1a1a2e;
-      background: #ffffff;
-      overflow-x: hidden;
-    }
-
-    /* ===== NAVBAR ===== */
-    .ms-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 48px;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      transition: all 0.3s ease;
-    }
-    .ms-nav.scrolled {
-      padding: 12px 48px;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-    }
-    .ms-logo {
-      width: 48px; height: 48px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #e8faf0, #d0f5e0);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 18px; color: #2d7a4f;
-      box-shadow: 0 4px 15px rgba(76,175,80,0.15);
-      flex-shrink: 0;
-    }
-    .ms-nav-links {
-      display: flex; gap: 32px; list-style: none;
-    }
-    .ms-nav-links li {
-      cursor: pointer; font-size: 14px; font-weight: 500;
-      color: #555; transition: color 0.3s ease;
-    }
-    .ms-nav-links li:hover { color: #2d7a4f; }
-
-    .ms-hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; z-index: 1001;
-    }
-    .ms-hamburger span {
-      width: 24px; height: 2.5px; background: #333;
-      border-radius: 2px; transition: all 0.3s ease;
-    }
-    .ms-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .ms-hamburger.open span:nth-child(2) { opacity: 0; }
-    .ms-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-
-    /* ===== MOBILE MENU ===== */
-    .ms-mobile-menu {
-      display: none; position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(255,255,255,0.98);
-      backdrop-filter: blur(20px);
-      z-index: 999;
-      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
-    }
-    .ms-mobile-menu.open { display: flex; }
-    .ms-mobile-menu li {
-      list-style: none; font-size: 22px; font-weight: 600;
-      color: #333; cursor: pointer; transition: color 0.3s;
-    }
-    .ms-mobile-menu li:hover { color: #2d7a4f; }
-
-    /* ===== HERO ===== */
-    .ms-hero {
-      min-height: 100vh; display: flex;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 120px 24px 80px;
-    }
-    .ms-hero-inner {
-      max-width: 800px; width: 100%;
-      display: flex; flex-direction: column; align-items: center;
-    }
-    .ms-hero h1 {
-      font-size: clamp(36px, 5vw, 56px); font-weight: 800;
-      line-height: 1.15; color: #333; margin-bottom: 24px;
-    }
-    .ms-hero h1 span { color: #4caf50; }
-    .ms-hero p {
-      font-size: clamp(16px, 2vw, 19px); color: #666;
-      line-height: 1.7; max-width: 600px; margin-bottom: 40px;
-    }
-    .ms-hero-btns {
-      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
-    }
-    .ms-btn-primary {
-      padding: 16px 36px; background: #1a1a2e; color: #fff;
-      border: none; border-radius: 12px; font-size: 15px; font-weight: 600;
-      cursor: pointer; transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    }
-    .ms-btn-primary:hover {
-      transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
-    .ms-btn-outline {
-      padding: 16px 36px; background: transparent; color: #555;
-      border: 2px solid #ddd; border-radius: 12px; font-size: 15px; font-weight: 600;
-      cursor: pointer; transition: all 0.3s ease;
-    }
-    .ms-btn-outline:hover {
-      border-color: #4caf50; color: #4caf50; transform: translateY(-2px);
-    }
-
-    /* ===== SECTION BASE ===== */
-    .ms-section {
-      padding: 100px 48px; max-width: 1200px; margin: 0 auto;
-    }
-    .ms-section-title {
-      font-size: clamp(32px, 4vw, 44px); font-weight: 800;
-      color: #333; margin-bottom: 16px;
-    }
-    .ms-section-title span { color: #4caf50; }
-
-    /* ===== ABOUT ===== */
-    .ms-about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .ms-about-text h2 {
-      font-size: clamp(28px, 3.5vw, 38px);
-      font-weight: 800;
-      color: #4caf50;
-      margin-bottom: 24px;
-    }
-
-    .ms-about-text p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .ms-about-text strong {
-      color: #1a1a2e;
-    }
-
-    /* ===== IMAGE - CENTERED ===== */
-    .ms-about-img {
-      position: relative;
-      width: 100%;
-      max-width: 520px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .ms-about-img-inner {
-      position: relative;
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #f3f4f6;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    }
-
-    .ms-about-img-inner img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-
-    .ms-about-img-inner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.04),
-        rgba(0, 0, 0, 0.15)
-      );
-      pointer-events: none;
-    }
-
-    /* ===== SERVICES ===== */
-    .ms-services-header { text-align: center; margin-bottom: 60px; }
-    .ms-services-header p { color: #666; font-size: 17px; margin-top: 8px; }
-    .ms-services-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
-    }
-    .ms-service-card:first-child {
-      grid-column: 1 / -1;
-    }
-    .ms-service-card {
-      background: #fafbfc; border: 1px solid #f0f0f0;
-      border-radius: 16px; padding: 36px 30px; transition: all 0.3s ease;
-    }
-    .ms-service-card:hover {
-      transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-      border-color: #e0e0e0;
-    }
-    .ms-service-icon { font-size: 40px; margin-bottom: 20px; }
-    .ms-service-card h3 {
-      font-size: 22px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px;
-    }
-    .ms-service-tag {
-      font-size: 13px; font-weight: 600; color: #c9a836; margin-bottom: 16px;
-    }
-    .ms-service-card p { font-size: 15px; color: #666; line-height: 1.7; }
-
-    /* ===== TOOLS ===== */
-    .ms-tools-header { text-align: center; margin-bottom: 50px; }
-    .ms-tools-header p { color: #666; font-size: 17px; margin-top: 8px; }
-    .ms-tools-grid {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;
-    }
-    .ms-tool-card {
-      flex: 0 1 calc(33.333% - 16px); min-width: 260px;
-      background: #fafbfc; border: 1px solid #f0f0f0;
-      border-radius: 16px; padding: 28px 24px; transition: all 0.3s ease;
-    }
-    .ms-tool-card:hover {
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06); transform: translateY(-2px);
-    }
-    .ms-tool-card h4 {
-      font-size: 18px; font-weight: 700; color: #4caf50; margin-bottom: 16px;
-    }
-    .ms-tool-card ul {
-      list-style: none; display: flex; flex-direction: column; gap: 10px;
-    }
-    .ms-tool-card li {
-      font-size: 14px; color: #555; display: flex; align-items: center; gap: 8px;
-    }
-    .ms-tool-card li::before { content: '▸'; color: #4caf50; font-weight: 700; }
-
-    /* ===== WORK ===== */
-    .ms-work-header {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .ms-work-disclaimer {
-      text-align: center;
-      background: #fafbfc;
-      border-radius: 12px;
-      padding: 18px 26px;
-      margin-bottom: 48px;
-      color: #666;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .ms-work-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
-    }
-
-    .ms-work-card {
-      background: #fafbfc;
-      border: 1px solid #f0f0f0;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .ms-work-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 42px rgba(0, 0, 0, 0.08);
-    }
-
-    .ms-work-thumb {
-      position: relative;
-      width: 100%;
-      height: 180px;
-      overflow: hidden;
-      background: #f2f3f5;
-    }
-
-    .ms-work-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.45s ease;
-    }
-
-    .ms-work-card:hover .ms-work-thumb img {
-      transform: scale(1.06);
-    }
-
-    .ms-work-thumb::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.05),
-        rgba(0, 0, 0, 0.35)
-      );
-      pointer-events: none;
-    }
-
-    .ms-work-info {
-      padding: 24px;
-    }
-
-    .ms-work-info h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin-bottom: 6px;
-    }
-
-    .ms-work-tag {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #4caf50;
-      margin-bottom: 12px;
-    }
-
-    .ms-work-info p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .ms-work-link {
-      font-size: 14px;
-      font-weight: 600;
-      color: #4caf50;
-      text-decoration: none;
-      cursor: pointer;
-      transition: color 0.25s ease;
-    }
-
-    .ms-work-link:hover {
-      color: #388e3c;
-    }
-
-    /* ===== PERFORMANCE MARKETING CAMPAIGNS - COMPACT ===== */
-    .ms-campaign-card {
-      background: #fafbfc;
-      border: 1px solid #f0f0f0;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .ms-campaign-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 42px rgba(0, 0, 0, 0.08);
-    }
-
-    .ms-campaign-card .ms-work-info {
-      padding: 24px;
-    }
-
-    .ms-campaign-card .ms-work-info h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin-bottom: 8px;
-    }
-
-    .ms-campaign-card .ms-work-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      color: #fff;
-      background: linear-gradient(135deg, #4caf50, #2d7a4f);
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin-bottom: 14px;
-    }
-
-    .ms-campaign-card .ms-work-info p {
-      font-size: 13px;
-      color: #555;
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
-
-    .ms-campaign-card .ms-work-info p strong {
-      color: #1a1a2e;
-      font-weight: 600;
-    }
-
-    .ms-campaign-points {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 12px 0;
-    }
-
-    .ms-campaign-points li {
-      font-size: 13px;
-      color: #555;
-      line-height: 1.6;
-      padding: 4px 0 4px 20px;
-      position: relative;
-    }
-
-    .ms-campaign-points li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: #4caf50;
-      font-weight: 700;
-    }
-
-    .ms-campaign-results {
-      list-style: none;
-      padding: 12px 16px;
-      margin: 0 0 12px 0;
-      background: linear-gradient(135deg, #e8faf0, #f0fdf4);
-      border-radius: 10px;
-      border: 1px solid #d0f5e0;
-    }
-
-    .ms-campaign-results li {
-      font-size: 13px;
-      color: #2d7a4f;
-      font-weight: 600;
-      line-height: 1.7;
-      padding: 2px 0;
-    }
-
-    .ms-campaign-card .ms-work-link {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #888;
-      background: #f0f0f0;
-      padding: 6px 14px;
-      border-radius: 6px;
-      text-decoration: none;
-      cursor: default;
-      transition: none;
-    }
-
-    .ms-campaign-card .ms-work-link:hover {
-      color: #888;
-    }
-
-    /* Campaign Icon Header - Compact */
-    .ms-campaign-icon {
-      width: 100%;
-      height: 60px;
-      background: linear-gradient(135deg, #1a1a2e 0%, #2d3748 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ms-campaign-icon::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(76,175,80,0.1) 0%, transparent 50%);
-      animation: pulse-bg 4s ease-in-out infinite;
-    }
-
-    @keyframes pulse-bg {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 0.8; }
-    }
-
-    .ms-campaign-icon span {
-      font-size: 28px;
-      z-index: 1;
-    }
-
-    /* ===== CONTACT ===== */
-    .ms-contact { text-align: center; }
-    .ms-contact-header { margin-bottom: 40px; }
-    .ms-contact-header p { font-size: 17px; color: #666; margin-top: 12px; line-height: 1.6; }
-    .ms-contact-items {
-      display: flex; flex-direction: column; gap: 16px;
-      max-width: 500px; margin: 0 auto 36px;
-    }
-    .ms-contact-item {
-      display: flex; align-items: center; justify-content: center; gap: 14px;
-      padding: 18px 28px; background: #fafbfc; border: 1px solid #f0f0f0;
-      border-radius: 14px; font-size: 16px; color: #555; transition: all 0.3s ease;
-      text-decoration: none;
-    }
-    .ms-contact-item:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
-    .ms-contact-item span { font-size: 22px; }
-    .ms-contact-item.clickable:hover { 
-      border-color: #4caf50; 
-      color: #2d7a4f;
-    }
-    .ms-social-row {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-    }
-    .ms-social-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 16px 24px;
-      background: #fafbfc;
-      border: 1px solid #f0f0f0;
-      border-radius: 14px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #555;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      flex: 1;
-      max-width: 240px;
-    }
-    .ms-social-item:hover {
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
-    }
-    .ms-social-item.linkedin:hover {
-      border-color: #0077b5;
-      color: #0077b5;
-    }
-    .ms-social-item.instagram:hover {
-      border-color: #E4405F;
-      color: #E4405F;
-    }
-    .ms-social-item span {
-      font-size: 20px;
-    }
-    .ms-btn-contact {
-      display: inline-block; padding: 18px 48px;
-      background: linear-gradient(135deg, #e8faf0, #d0f5e0);
-      color: #1a1a2e; border: none; border-radius: 14px;
-      font-size: 16px; font-weight: 700; cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(76,175,80,0.15);
-      text-decoration: none;
-    }
-    .ms-btn-contact:hover {
-      transform: translateY(-2px); box-shadow: 0 8px 30px rgba(76,175,80,0.25);
-    }
-
-    /* ===== FOOTER ===== */
-    .ms-footer {
-      text-align: center; padding: 40px 24px;
-      border-top: 1px solid #f0f0f0; color: #999; font-size: 14px;
-    }
-    .ms-footer a { color: #4caf50; text-decoration: none; font-weight: 600; }
-    .ms-footer-linkedin {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-bottom: 16px; padding: 10px 24px;
-      background: #fafbfc; border: 1px solid #f0f0f0; border-radius: 10px;
-      font-size: 14px; font-weight: 600; color: #555;
-      text-decoration: none; transition: all 0.3s ease;
-    }
-    .ms-footer-linkedin:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); color: #0077b5; }
-
-    /* ===== ANIMATIONS ===== */
-    .ms-fade-in {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .ms-fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .ms-nav { padding: 14px 20px; }
-      .ms-nav.scrolled { padding: 10px 20px; }
-      .ms-nav-links { display: none; }
-      .ms-hamburger { display: flex; }
-      .ms-hero { padding: 100px 20px 60px; }
-      .ms-section { padding: 60px 20px; }
-      .ms-about { grid-template-columns: 1fr; gap: 40px; }
-      .ms-about-img { order: -1; max-width: 100%; }
-      .ms-services-grid { grid-template-columns: 1fr; }
-      .ms-service-card:first-child { grid-column: auto; }
-      .ms-tool-card { flex: 0 1 100%; }
-      .ms-work-grid { grid-template-columns: 1fr; }
-      .ms-hero-btns { flex-direction: column; width: 100%; max-width: 300px; }
-      .ms-btn-primary, .ms-btn-outline { width: 100%; text-align: center; }
-      .ms-work-thumb { height: 160px; }
-      .ms-work-info { padding: 20px; }
-      .ms-campaign-icon { height: 50px; }
-      .ms-campaign-icon span { font-size: 24px; }
-      .ms-social-row { flex-direction: column; }
-      .ms-social-item { max-width: 100%; }
-    }
-    @media (max-width: 480px) {
-      .ms-hero h1 { font-size: 30px; }
-      .ms-section-title { font-size: 28px; }
-      .ms-about-text h2 { font-size: 26px; }
-    }
-  </style>
+  <meta property="og:title" content="Mohammed Sohail Sayyed — Digital Marketing Solutions That Help Your Business Grow" />
+  <meta property="og:description" content="Websites, SEO, performance marketing, social media & creative content — built for measurable growth." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="ms-nav" id="navbar">
-    <div class="ms-logo">MS</div>
-    <ul class="ms-nav-links">
-      <li onclick="scrollToSection('about')">About</li>
-      <li onclick="scrollToSection('services')">Services</li>
-      <li onclick="scrollToSection('tools')">Tools</li>
-      <li onclick="scrollToSection('work')">Work</li>
-      <li onclick="scrollToSection('performance')">Campaigns</li>
-      <li onclick="scrollToSection('contact')">Contact</li>
-    </ul>
-    <div class="ms-hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+  <!-- Scroll progress bar -->
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
-  <!-- MOBILE MENU -->
-  <div class="ms-mobile-menu" id="mobileMenu">
-    <li onclick="scrollToSection('about')">About</li>
-    <li onclick="scrollToSection('services')">Services</li>
-    <li onclick="scrollToSection('tools')">Tools</li>
-    <li onclick="scrollToSection('work')">Work</li>
-    <li onclick="scrollToSection('performance')">Campaigns</li>
-    <li onclick="scrollToSection('contact')">Contact</li>
+  <!-- Ambient background glows -->
+  <div class="ambient" aria-hidden="true">
+    <span class="glow glow-1"></span>
+    <span class="glow glow-2"></span>
+    <span class="glow glow-3"></span>
   </div>
 
-  <!-- HERO -->
-  <section class="ms-hero">
-    <div class="ms-hero-inner">
-      <h1>Websites, SEO &amp; campaigns built to <span>grow real businesses</span></h1>
-      <p>I design and develop conversion-focused websites, SEO systems, and performance campaigns that help brands attract, engage, and convert the right audience.</p>
-      <div class="ms-hero-btns">
-        <button class="ms-btn-primary" onclick="scrollToSection('contact')">Let's Build Together</button>
-        <button class="ms-btn-outline" onclick="scrollToSection('work')">View My Work</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="ms-section ms-fade-in">
-    <div class="ms-about">
-      <div class="ms-about-text">
-        <h2>About Me</h2>
-        <p>I am <strong>Mohammed Sohail Sayyed</strong> — a digital marketer with a strong focus on performance-driven growth. I help businesses attract the right audience, increase visibility, and generate consistent leads through data-backed marketing strategies.</p>
-        <p>My expertise spans SEO, paid advertising, and conversion optimization, allowing me to build marketing systems that drive real, measurable results. Every campaign I manage is guided by analytics, user behavior, and ROI — not guesswork.</p>
-        <p>Alongside marketing, I am also a web developer who builds fast, responsive, and conversion-focused websites. By combining technical development with marketing strategy, I ensure websites are not just visually appealing, but optimized to support business growth.</p>
-      </div>
-      <div class="ms-about-img">
-        <div class="ms-about-img-inner">
-          <img src="https://i.ibb.co/YF09PgGg/1758804697286.jpg" alt="Digital Marketing and Web Development">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="ms-section ms-fade-in">
-    <div class="ms-services-header">
-      <h2 class="ms-section-title">What I <span>Do</span></h2>
-      <p>Comprehensive digital solutions tailored to your business needs</p>
-    </div>
-    <div class="ms-services-grid">
-      <div class="ms-service-card">
-        <div class="ms-service-icon">💻</div>
-        <h3>Website Development</h3>
-        <div class="ms-service-tag">Responsive Web · CMS · HTML/CSS</div>
-        <p>High-performing, responsive websites designed to convert visitors into leads. Built with modern technologies and optimized for speed.</p>
-      </div>
-      <div class="ms-service-card">
-        <div class="ms-service-icon">🚀</div>
-        <h3>SEO &amp; Growth</h3>
-        <div class="ms-service-tag">On-page · Off-page · Technical</div>
-        <p>SEO systems built for long-term rankings, traffic quality, and authority. Data-driven strategies that deliver measurable results.</p>
-      </div>
-      <div class="ms-service-card">
-        <div class="ms-service-icon">📊</div>
-        <h3>PPC &amp; Paid Campaigns</h3>
-        <div class="ms-service-tag">Google Ads · Meta Ads</div>
-        <p>ROI-driven campaigns with landing pages optimized for conversions. Strategic targeting and continuous optimization.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOOLS -->
-  <section id="tools" class="ms-section ms-fade-in">
-    <div class="ms-tools-header">
-      <h2 class="ms-section-title">Technologies &amp; <span>Tools</span></h2>
-      <p>Leveraging industry-leading platforms for optimal results</p>
-    </div>
-    <div class="ms-tools-grid">
-      <div class="ms-tool-card">
-        <h4>💻 Web Development</h4>
-        <ul>
-          <li>WordPress</li>
-          <li>GoHighLevel</li>
-          <li>Squarespace</li>
-          <li>Wix</li>
-          <li>HTML / CSS / JavaScript</li>
-        </ul>
-      </div>
-      <div class="ms-tool-card">
-        <h4>🎨 Creative</h4>
-        <ul>
-          <li>Canva</li>
-          <li>CapCut</li>
-        </ul>
-      </div>
-      <div class="ms-tool-card">
-        <h4>📈 Analytics</h4>
-        <ul>
-          <li>Google Analytics</li>
-          <li>Search Console</li>
-          <li>Tag Manager</li>
-          <li>Conversion Tracking</li>
-        </ul>
-      </div>
-      <div class="ms-tool-card">
-        <h4>🎯 SEO &amp; PPC</h4>
-        <ul>
-          <li>Ahrefs</li>
-          <li>Semrush</li>
-          <li>Ubersuggest</li>
-          <li>Google Ads</li>
-          <li>Meta Ads</li>
-        </ul>
-      </div>
-      <div class="ms-tool-card">
-        <h4>✉️ Email Marketing</h4>
-        <ul>
-          <li>Mailchimp</li>
-          <li>ConvertKit</li>
-          <li>Automations</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section id="work" class="ms-section ms-fade-in">
-    <div class="ms-work-header">
-      <h2 class="ms-section-title">Websites I've <span>Worked On</span></h2>
-    </div>
-    <div class="ms-work-disclaimer">
-      These projects reflect my contribution to development, optimization, structure, or performance. Ownership remains with respective businesses.
-    </div>
-   
-   <div class="ms-work-grid">
-
-  <div class="ms-work-card">
-    <div class="ms-work-thumb">
-      <img src="https://i.ibb.co/FqsrtqQs/Profilelinc.png" alt="Profilelinc Project">
-    </div>
-    <div class="ms-work-info">
-      <h3>Profilelinc</h3>
-      <div class="ms-work-tag">GoHighLevel</div>
-      <p>Professional networking platform with custom CRM integration and automated workflows.</p>
-      <a href="https://profilelinc.com/" target="_blank" class="ms-work-link">View Project →</a>
-    </div>
-  </div>
-
-  <div class="ms-work-card">
-    <div class="ms-work-thumb">
-      <img src="https://i.ibb.co/JjfzQSjN/Vozd-Victoria.png" alt="Voz d Victoria Project">
-    </div>
-    <div class="ms-work-info">
-      <h3>Voz d Victoria</h3>
-      <div class="ms-work-tag">WordPress</div>
-      <p>Translation service website with multilingual support.</p>
-      <a href="https://vozdvictoria.com/" target="_blank" class="ms-work-link">View Project →</a>
-    </div>
-  </div>
-
-  <div class="ms-work-card">
-    <div class="ms-work-thumb">
-      <img src="https://i.ibb.co/r2LTW5Gm/presentation.png" alt="HTML Presentation Project">
-    </div>
-    <div class="ms-work-info">
-      <h3>HTML Presentation</h3>
-      <div class="ms-work-tag">Custom HTML</div>
-      <p>Interactive business presentation with custom animations and responsive design.</p>
-      <a href="https://profilelinc.com/pfs-overview" target="_blank" class="ms-work-link">View Project →</a>
-    </div>
-  </div>
-</div>
-  </section>
-
-  <!-- PERFORMANCE MARKETING CAMPAIGNS -->
-  <section id="performance" class="ms-section ms-fade-in">
-    <div class="container">
-
-      <div class="ms-work-header">
-        <h2 class="ms-section-title">Performance Marketing <span>Campaigns</span></h2>
-      </div>
-      <div class="ms-work-disclaimer">
-        Campaign metrics are shared as percentage improvements and performance ranges to maintain client confidentiality.
-      </div>
-
-      <div class="ms-work-grid">
-
-        <!-- Case Study 1 -->
-        <div class="ms-campaign-card">
-          <div class="ms-campaign-icon">
-            <span>💊</span>
-          </div>
-          <div class="ms-work-info">
-            <h3>Medicinal Lead Generation</h3>
-            <div class="ms-work-tag">Google Ads · Healthcare</div>
-
-            <p><strong>Brand:</strong> Quadcities Wellness (Spravato)</p>
-
-            <p><strong>Objective:</strong> Generate qualified medical inquiries while complying with Google Ads pharmaceutical policies.</p>
-
-            <p><strong>Strategy:</strong></p>
-            <ul class="ms-campaign-points">
-              <li>Policy-compliant keyword restructuring</li>
-              <li>Intent-based search targeting</li>
-              <li>Landing page optimization</li>
-            </ul>
-
-            <p><strong>Results:</strong></p>
-            <ul class="ms-campaign-results">
-              <li>⬇️ Cost per lead reduced by ~30%</li>
-              <li>⬆️ Improved lead quality</li>
-              <li>⬆️ Stable ad approval rate</li>
-            </ul>
-
-            <span class="ms-work-link">Client data protected</span>
-          </div>
-        </div>
-
-        <!-- Case Study 2 -->
-        <div class="ms-campaign-card">
-          <div class="ms-campaign-icon">
-            <span>🛒</span>
-          </div>
-          <div class="ms-work-info">
-            <h3>E-commerce Sales Growth</h3>
-            <div class="ms-work-tag">Meta Ads · Google Ads · Shopify</div>
-
-            <p><strong>Brand:</strong> Coveted Forge (3D Printed Products)</p>
-
-            <p><strong>Objective:</strong> Scale sales for niche 3D-printed products and identify high-converting audiences.</p>
-
-            <p><strong>Strategy:</strong></p>
-            <ul class="ms-campaign-points">
-              <li>Interest & lookalike audience testing</li>
-              <li>Creative testing (static & video)</li>
-              <li>Retargeting cart abandoners</li>
-            </ul>
-
-            <p><strong>Results:</strong></p>
-            <ul class="ms-campaign-results">
-              <li>⬆️ Improved ROAS over cycles</li>
-              <li>⬆️ Higher conversion rate</li>
-              <li>⬇️ Reduced cost per purchase</li>
-            </ul>
-
-            <span class="ms-work-link">Shopify funnel optimized</span>
-          </div>
-        </div>
-
-        <!-- Case Study 3 -->
-        <div class="ms-campaign-card">
-          <div class="ms-campaign-icon">
-            <span>📱</span>
-          </div>
-          <div class="ms-work-info">
-            <h3>Mobile App Install Campaign</h3>
-            <div class="ms-work-tag">Google App · Meta Ads</div>
-
-            <p><strong>Brand:</strong> Apex Fresh Pvt Ltd</p>
-
-            <p><strong>Objective:</strong> Increase app installs and onboard retailers to a B2B grocery platform.</p>
-
-            <p><strong>Strategy:</strong></p>
-            <ul class="ms-campaign-points">
-              <li>Google App campaigns for scale</li>
-              <li>Meta interest-based targeting</li>
-              <li>Play Store listing optimization</li>
-            </ul>
-
-            <p><strong>Results:</strong></p>
-            <ul class="ms-campaign-results">
-              <li>⬆️ Consistent increase in installs</li>
-              <li>⬇️ Optimized cost per install</li>
-              <li>⬆️ Better retailer onboarding</li>
-            </ul>
-
-            <span class="ms-work-link">App growth focused</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="ms-section ms-contact ms-fade-in">
-    <div class="ms-contact-header">
-      <h2 class="ms-section-title">Let's Work <span>Together</span></h2>
-      <p>Looking for a website or growth system that actually performs?<br />Let's discuss your project and create something amazing.</p>
-    </div>
-<div class="ms-contact-items">
-  <div class="ms-contact-item">
-    <span>📧</span>
-    <a href="mailto:mdsohail6056@gmail.com">mdsohail6056@gmail.com</a>
-  </div>
-
-  <div class="ms-contact-item">
-    <span>📞</span> +91 9987-026-056
-  </div>
-
-  <div class="ms-social-row">
-    <a href="https://www.linkedin.com/in/mohammed-sohail-sayyed"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="ms-social-item linkedin">
-      <span>💼</span> LinkedIn
+  <!-- ============ NAVBAR ============ -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="logo" aria-label="Home">
+      <span class="logo-mark">MS</span>
+      <span class="logo-text">Mohammed <em>Sohail</em></span>
     </a>
-  </div>
-</div>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#why" class="nav-link">Why Me</a></li>
+        <li><a href="#packages" class="nav-link">Packages</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-primary btn-sm nav-cta">Book a Call →</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-<a href="mailto:mdsohail6056@gmail.com" class="ms-btn-contact">
-  Get In Touch
-</a>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Me</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="btn btn-primary">Book a Call →</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="hero">
+    <div class="hero-inner reveal">
+      <span class="eyebrow"><span class="dot"></span> Available for new projects</span>
+      <h1>Digital Marketing Solutions That <span class="accent">Help Your Business Grow</span></h1>
+      <p class="lead">Build a stronger online presence with strategic websites, SEO, performance marketing, social media management, and creative digital solutions designed to attract the right audience, generate qualified leads, and support long-term business growth.</p>
+      <p class="lead sub">Whether you're launching a new business, improving your digital presence, or looking for a reliable marketing partner, I provide practical solutions backed by strategy, creativity, and measurable execution.</p>
+      <div class="hero-btns">
+        <a href="#services" class="btn btn-primary">Explore Services →</a>
+        <a href="#projects" class="btn btn-outline">View My Work →</a>
+      </div>
+
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Websites</span><span>•</span>
+          <span>SEO</span><span>•</span>
+          <span>Google Ads</span><span>•</span>
+          <span>Meta Ads</span><span>•</span>
+          <span>Social Media</span><span>•</span>
+          <span>Content</span><span>•</span>
+          <span>Analytics</span><span>•</span>
+          <span>Automation</span><span>•</span>
+          <span>Websites</span><span>•</span>
+          <span>SEO</span><span>•</span>
+          <span>Google Ads</span><span>•</span>
+          <span>Meta Ads</span><span>•</span>
+          <span>Social Media</span><span>•</span>
+          <span>Content</span><span>•</span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="ms-footer">
-    <p>© 2026 · Mohammed Sohail Sayyed · Built with passion for performance</p>
+  <!-- ============ TRUST / COUNTERS ============ -->
+  <section class="section trust" id="trust">
+    <div class="section-head reveal">
+      <span class="kicker">Trust</span>
+      <h2>Delivering Digital Solutions That <span class="accent">Drive Growth</span></h2>
+      <p>Every project is built around measurable outcomes. From websites and SEO to paid advertising and creative campaigns, my focus is on delivering work that contributes to sustainable business growth.</p>
+    </div>
+
+    <div class="counters">
+      <div class="counter-card reveal">
+        <div class="counter" data-target="20" data-suffix="+">0</div>
+        <p>Projects Delivered</p>
+      </div>
+      <div class="counter-card reveal">
+        <div class="counter" data-target="7" data-suffix="+">0</div>
+        <p>Websites Developed</p>
+      </div>
+      <div class="counter-card reveal">
+        <div class="counter" data-target="4" data-suffix="+">0</div>
+        <p>Industries Served</p>
+      </div>
+      <div class="counter-card reveal">
+        <div class="counter" data-target="98" data-suffix="%">0</div>
+        <p>Client Satisfaction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section" id="services">
+    <div class="section-head reveal">
+      <span class="kicker">Services</span>
+      <h2>Digital Marketing <span class="accent">Services</span></h2>
+      <p>Every business has different goals, but success starts with a strong digital foundation. My services are designed to help businesses establish credibility, increase visibility, and generate measurable results through integrated digital marketing solutions.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">🖥️</div>
+        <h3>Website Design &amp; Development</h3>
+        <p>Professional, responsive websites that combine modern design, user experience, and conversion-focused development.</p>
+        <span class="card-link">Learn more →</span>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">🔎</div>
+        <h3>Search Engine Optimization</h3>
+        <p>Technical SEO, Local SEO, website audits, keyword optimization, and content strategies that improve search visibility and organic growth.</p>
+        <span class="card-link">Learn more →</span>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">📈</div>
+        <h3>Performance Marketing</h3>
+        <p>Google Ads and Meta Ads campaigns focused on lead generation, conversion optimization, and maximizing advertising performance.</p>
+        <span class="card-link">Learn more →</span>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">🎨</div>
+        <h3>Graphic Design, Video &amp; Content</h3>
+        <p>Professional graphics, marketing collateral, short-form videos, presentations, branded visuals, and engaging content designed to strengthen your brand identity.</p>
+        <span class="card-link">Learn more →</span>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">📱</div>
+        <h3>Social Media Management</h3>
+        <p>Content planning, profile optimization, creative publishing, scheduling, and audience engagement across major social media platforms.</p>
+        <span class="card-link">Learn more →</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE ME ============ -->
+  <section class="section" id="why">
+    <div class="section-head reveal">
+      <span class="kicker">Why Me</span>
+      <h2>Why Businesses Choose to <span class="accent">Work With Me</span></h2>
+      <p>Successful digital marketing isn't just about launching campaigns—it's about having a reliable partner who understands your business, communicates clearly, and focuses on long-term results.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="why-num">01</span>
+        <h3>Business-First Approach</h3>
+        <p>Every recommendation is aligned with your business goals, ensuring every project contributes to measurable growth.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-num">02</span>
+        <h3>One Dedicated Point of Contact</h3>
+        <p>Work directly with the person planning and executing your projects, without the confusion of multiple account managers.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-num">03</span>
+        <h3>Data-Driven Decisions</h3>
+        <p>Every strategy is backed by research, analytics, and continuous optimization—not assumptions.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-num">04</span>
+        <h3>Transparent Communication</h3>
+        <p>Clear timelines, regular updates, and honest reporting throughout every stage of the project.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-num">05</span>
+        <h3>Long-Term Growth Mindset</h3>
+        <p>I build digital systems that continue creating value well beyond launch day.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-num">06</span>
+        <h3>Flexible Engagement</h3>
+        <p>Choose between complete website packages, standalone services, or ongoing marketing support based on your business needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WEBSITE PACKAGES ============ -->
+  <section class="section" id="packages">
+    <div class="section-head reveal">
+      <span class="kicker">Website Packages</span>
+      <h2>Website Solutions for <span class="accent">Business Growth</span></h2>
+      <p>Whether you're launching your first website or upgrading an existing one, these packages combine professional web design with essential digital marketing foundations to help your business establish credibility and create opportunities online.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <article class="price-card reveal">
+        <header class="price-head">
+          <h3>Starter</h3>
+          <p class="price-sub">Single-page Website</p>
+          <div class="price"><span class="currency">$</span>199</div>
+        </header>
+        <ul class="price-features">
+          <li>Single-page Website</li>
+          <li>Responsive Design</li>
+          <li>Domain &amp; Hosting Assistance</li>
+          <li>Basic SEO Setup</li>
+          <li>Technical SEO — <strong>Basic</strong></li>
+          <li>Google Business Profile Setup</li>
+          <li>GA4 &amp; Search Console Setup</li>
+          <li>Social Media Profile Setup</li>
+          <li>5 Social Media Posts</li>
+          <li>Content Calendar</li>
+          <li class="muted">— Short-form Videos</li>
+          <li class="muted">— Monthly Performance Report</li>
+          <li class="muted">— Priority Support</li>
+        </ul>
+        <p class="delivery">Estimated Delivery: <strong>1–2 Weeks</strong></p>
+        <a href="#contact" class="btn btn-outline btn-block">Get Started →</a>
+      </article>
+
+      <!-- Growth (featured) -->
+      <article class="price-card featured reveal">
+        <span class="badge-featured">Most Popular</span>
+        <header class="price-head">
+          <h3>Growth</h3>
+          <p class="price-sub">Multi-page Website (Up to 5 Pages)</p>
+          <div class="price"><span class="currency">$</span>499</div>
+        </header>
+        <ul class="price-features">
+          <li>Multi-page Website (Up to 5 Pages)</li>
+          <li>Responsive Design</li>
+          <li>Domain &amp; Hosting Assistance</li>
+          <li>Basic SEO Setup</li>
+          <li>Technical SEO — <strong>Advanced</strong></li>
+          <li>Google Business Profile Setup</li>
+          <li>GA4 &amp; Search Console Setup</li>
+          <li>Social Media Profile Setup</li>
+          <li>10 Social Media Posts</li>
+          <li>2 Short-form Videos</li>
+          <li>Content Calendar</li>
+          <li>Monthly Performance Report</li>
+          <li>Priority Support</li>
+        </ul>
+        <p class="delivery">Estimated Delivery: <strong>2–4 Weeks</strong></p>
+        <a href="#contact" class="btn btn-primary btn-block">Choose Growth →</a>
+      </article>
+
+      <!-- Premium -->
+      <article class="price-card reveal">
+        <header class="price-head">
+          <h3>Premium</h3>
+          <p class="price-sub">Custom Multi-page Website</p>
+          <div class="price"><span class="currency">$</span>899</div>
+        </header>
+        <ul class="price-features">
+          <li>Custom Multi-page Website</li>
+          <li>Responsive Design</li>
+          <li>Domain &amp; Hosting Assistance</li>
+          <li>Basic SEO Setup</li>
+          <li>Technical SEO — <strong>Advanced + Optimization</strong></li>
+          <li>Google Business Profile Setup</li>
+          <li>GA4 &amp; Search Console Setup</li>
+          <li>Social Media Profile Setup</li>
+          <li>15 Social Media Posts</li>
+          <li>5 Short-form Videos</li>
+          <li>Content Calendar</li>
+          <li>Monthly Performance Report</li>
+          <li>Priority Support</li>
+        </ul>
+        <p class="delivery">Estimated Delivery: <strong>4–6 Weeks</strong></p>
+        <a href="#contact" class="btn btn-outline btn-block">Go Premium →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ MONTHLY PLANS ============ -->
+  <section class="section" id="monthly">
+    <div class="section-head reveal">
+      <span class="kicker">Monthly Retainers</span>
+      <h2>Get Dedicated Marketing Assistance <span class="accent">When You Need It</span></h2>
+      <p>As your business grows, managing websites, SEO, content, advertising campaigns, and digital marketing activities becomes increasingly time-consuming. Instead of coordinating multiple freelancers or agencies, work with one dedicated marketing professional who understands your business and supports your growth consistently.</p>
+    </div>
+
+    <div class="plan-grid">
+      <article class="plan-card reveal">
+        <h3>Lite</h3>
+        <p class="plan-hours">2 Hours / Day</p>
+        <div class="plan-price">$249<span>/month</span></div>
+        <a href="#contact" class="btn btn-outline btn-block">Start Lite →</a>
+      </article>
+      <article class="plan-card featured reveal">
+        <span class="badge-featured">Recommended</span>
+        <h3>Standard</h3>
+        <p class="plan-hours">4 Hours / Day</p>
+        <div class="plan-price">$449<span>/month</span></div>
+        <a href="#contact" class="btn btn-primary btn-block">Start Standard →</a>
+      </article>
+      <article class="plan-card reveal">
+        <h3>Professional</h3>
+        <p class="plan-hours">6 Hours / Day</p>
+        <div class="plan-price">$649<span>/month</span></div>
+        <a href="#contact" class="btn btn-outline btn-block">Start Professional →</a>
+      </article>
+      <article class="plan-card reveal">
+        <h3>Dedicated</h3>
+        <p class="plan-hours">8 Hours / Day</p>
+        <div class="plan-price">$849<span>/month</span></div>
+        <a href="#contact" class="btn btn-outline btn-block">Start Dedicated →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PROJECT SERVICES ============ -->
+  <section class="section" id="project-services">
+    <div class="section-head reveal">
+      <span class="kicker">Project-Based</span>
+      <h2>Project-Based <span class="accent">Digital Marketing Services</span></h2>
+      <p>Looking for help with a specific project? These services are available individually, allowing you to get expert implementation without committing to ongoing monthly support.</p>
+    </div>
+
+    <div class="service-list">
+      <div class="service-row reveal"><span class="sr-name">Single-page Website</span><span class="sr-price">Starting from <strong>$199</strong></span></div>
+      <div class="service-row reveal"><span class="sr-name">Multi-page Website</span><span class="sr-price">Starting from <strong>$399</strong></span></div>
+      <div class="service-row reveal"><span class="sr-name">Custom Website</span><span class="sr-price">Starting from <strong>$799</strong></span></div>
+      <div class="service-row reveal"><span class="sr-name">Landing Page Design</span><span class="sr-price">Starting from <strong>$149</strong></span></div>
+      <div class="service-row reveal"><span class="sr-name">Website Speed Optimization</span><span class="sr-price">Starting from <strong>$99</strong></span></div>
+      <div class="service-row reveal"><span class="sr-name">Technical SEO Audit</span><span class="sr-price">Starting from <strong>$149</strong></span></div>
+      <div class="service-row reveal"><span class="sr-name">Local SEO Setup</span><span class="sr-price">Starting from <strong>$199</strong></span></div>
+      <div class="service-row reveal"><span class="sr-name">Google Business Profile (GMB) Creation &amp; Verification</span><span class="sr-price">Starting from <strong>$99</strong></span></div>
+      <div class="service-row reveal"><span class="sr-name">Google Ads Campaign Setup</span><span class="sr-price">Starting from <strong>$149</strong></span></div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="section" id="process">
+    <div class="section-head reveal">
+      <span class="kicker">Process</span>
+      <h2>A Simple Process Designed Around <span class="accent">Your Success</span></h2>
+      <p>Every project follows a structured process to ensure clear communication, efficient execution, and measurable results.</p>
+    </div>
+
+    <ol class="timeline">
+      <li class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <span class="step-label">Step 1</span>
+          <h3>Discovery</h3>
+          <p>We begin with a conversation to understand your business, goals, challenges, and current digital presence.</p>
+        </div>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <span class="step-label">Step 2</span>
+          <h3>Strategy</h3>
+          <p>Based on your objectives, I recommend the most suitable services and create a roadmap tailored to your business.</p>
+        </div>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <span class="step-label">Step 3</span>
+          <h3>Execution</h3>
+          <p>From design and development to SEO, advertising, and content creation, every task is executed with attention to quality and performance.</p>
+        </div>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <span class="step-label">Step 4</span>
+          <h3>Launch &amp; Continuous Growth</h3>
+          <p>After launch, performance is monitored, improvements are implemented, and ongoing support is available whenever your business needs it.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ FEATURED PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section-head reveal">
+      <span class="kicker">Case Studies</span>
+      <h2>Featured <span class="accent">Project</span></h2>
+      <p>Every project begins with a unique business objective. Whether it's building a professional website, implementing automation, or creating a digital experience that reflects a brand's identity, my focus is on delivering practical solutions that combine usability, performance, and long-term scalability.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card reveal">
+        <a href="https://profilelinc.com/" target="_blank" rel="noopener" class="project-thumb">
+          <img src="https://i.ibb.co/FqsrtqQs/Profilelinc.png" alt="Profilelinc CRM platform preview" loading="lazy" />
+        </a>
+        <div class="project-body">
+          <span class="project-tag">CRM Platform • GoHighLevel Development</span>
+          <h3>Profilelinc</h3>
+          <p><strong>My Role:</strong> Website Development • CRM Implementation • Workflow Automation • UI Optimization</p>
+          <p><strong>Project Overview:</strong> Developed a CRM-powered networking platform using GoHighLevel, enabling streamlined contact management, automated workflows, and an intuitive user experience tailored to business networking needs.</p>
+          <a href="https://profilelinc.com/" target="_blank" rel="noopener" class="card-link">Visit project →</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <a href="https://vozdvictoria.com/" target="_blank" rel="noopener" class="project-thumb">
+          <img src="https://i.ibb.co/JjfzQSjN/Vozd-Victoria.png" alt="Voz d Victoria multilingual website preview" loading="lazy" />
+        </a>
+        <div class="project-body">
+          <span class="project-tag">Multilingual Business Website</span>
+          <h3>Voz d Victoria</h3>
+          <p><strong>My Role:</strong> WordPress Development • Multilingual Setup • SEO Structure • Responsive Design</p>
+          <p><strong>Project Overview:</strong> Designed and developed a multilingual WordPress website for a professional translation services company, ensuring an accessible user experience across languages while maintaining a clean, conversion-focused website structure.</p>
+          <a href="https://vozdvictoria.com/" target="_blank" rel="noopener" class="card-link">Visit project →</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <a href="https://profilelinc.com/pfs-overview" target="_blank" rel="noopener" class="project-thumb">
+          <img src="https://i.ibb.co/r2LTW5Gm/presentation.png" alt="Interactive HTML business presentation preview" loading="lazy" />
+        </a>
+        <div class="project-body">
+          <span class="project-tag">HTML Presentation Experience</span>
+          <h3>Interactive Business Presentation</h3>
+          <p><strong>My Role:</strong> UI Design • Front-end Development • Interactive Animation</p>
+          <p><strong>Project Overview:</strong> Created a fully responsive HTML-based presentation as a modern alternative to conventional slide decks, delivering a lightweight, interactive experience that can be accessed across desktop and mobile devices.</p>
+          <a href="https://profilelinc.com/pfs-overview" target="_blank" rel="noopener" class="card-link">View presentation →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CAMPAIGN RESULTS ============ -->
+  <section class="section" id="campaigns">
+    <div class="section-head reveal">
+      <span class="kicker">Campaign Results</span>
+      <h2>Campaign <span class="accent">Results</span></h2>
+      <p>Every campaign is built around measurable business outcomes rather than vanity metrics. These projects highlight my approach to improving advertising performance, lead generation, and campaign efficiency while aligning with each client's business goals.</p>
+    </div>
+
+    <div class="campaign-grid">
+      <article class="campaign-card reveal">
+        <div class="campaign-icon"><span>🏥</span></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Google Ads</span>
+          <h3>Healthcare Lead Generation</h3>
+          <p><strong>Industry:</strong> Healthcare</p>
+          <p><strong>My Role:</strong> Google Ads Strategy • Campaign Optimization • Landing Page Recommendations • Conversion Tracking</p>
+          <p><strong>Business Objective:</strong> Generate qualified patient enquiries while maintaining compliance with Google's healthcare advertising policies.</p>
+          <div class="results-box">
+            <p class="results-label">Key Results</p>
+            <ul>
+              <li>Reduced Cost Per Lead by approximately 30%</li>
+              <li>Improved lead quality</li>
+              <li>Higher campaign efficiency</li>
+              <li>Sustainable long-term performance</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal">
+        <div class="campaign-icon"><span>🛒</span></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Meta Ads • Google Ads</span>
+          <h3>E-commerce Growth</h3>
+          <p><strong>Industry:</strong> E-commerce</p>
+          <p><strong>My Role:</strong> Campaign Strategy • Audience Targeting • Creative Testing • Conversion Optimization</p>
+          <p><strong>Business Objective:</strong> Increase online sales while improving Return on Ad Spend through audience segmentation and continuous campaign optimization.</p>
+          <div class="results-box">
+            <p class="results-label">Key Results</p>
+            <ul>
+              <li>Improved ROAS</li>
+              <li>Increased website conversions</li>
+              <li>Lower Cost Per Purchase</li>
+              <li>Better campaign scalability</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal">
+        <div class="campaign-icon"><span>📲</span></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Google App Campaigns • Meta Ads</span>
+          <h3>Mobile App Acquisition</h3>
+          <p><strong>Industry:</strong> B2B Retail</p>
+          <p><strong>My Role:</strong> App Campaign Management • Acquisition Strategy • Performance Optimization</p>
+          <p><strong>Business Objective:</strong> Drive app installations while onboarding retailers through optimized acquisition campaigns.</p>
+          <div class="results-box">
+            <p class="results-label">Key Results</p>
+            <ul>
+              <li>Increased app installations</li>
+              <li>Lower Cost Per Install</li>
+              <li>Improved retailer acquisition</li>
+              <li>Sustainable user growth</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="about-grid">
+      <div class="about-img reveal">
+        <div class="about-img-inner">
+          <img src="https://i.ibb.co/YF09PgGg/1758804697286.jpg" alt="Portrait of Mohammed Sohail Sayyed" loading="lazy" />
+        </div>
+        <div class="about-badge">
+          <span>⚡</span>
+          <div>
+            <strong>Digital Marketing</strong>
+            <p>Consultant &amp; Partner</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <span class="kicker">About</span>
+        <h2>Meet Your <span class="accent">Digital Marketing Partner</span></h2>
+        <p>I'm <strong>Mohammed Sohail Sayyed</strong>, a Digital Marketing Consultant helping businesses strengthen their online presence through websites, SEO, performance marketing, creative content, and ongoing digital marketing support.</p>
+        <p>My approach combines strategic thinking with hands-on execution, allowing businesses to work with a single marketing partner instead of coordinating multiple freelancers or agencies. Whether it's launching a website, improving search rankings, managing advertising campaigns, or supporting day-to-day marketing activities, my focus is always on delivering practical solutions that contribute to sustainable business growth.</p>
+        <p>I believe successful digital marketing isn't about chasing trends—it's about building systems that consistently increase visibility, generate qualified leads, and create measurable business results.</p>
+        <div class="about-ctas">
+          <a href="#contact" class="btn btn-primary">Work With Me →</a>
+          <a href="https://www.linkedin.com/in/mohammed-sohail-sayyed" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section cta-section reveal">
+    <div class="cta-card">
+      <span class="kicker light">Let's Grow</span>
+      <h2>Ready to Grow Your Business <span class="accent">Online?</span></h2>
+      <p>Whether you're looking for a professional website, improved search visibility, high-performing advertising campaigns, creative content, or ongoing digital marketing support, I'd love to learn more about your business and recommend the right solution.</p>
+      <p class="cta-line">Let's build something that creates lasting business growth.</p>
+      <a href="#contact" class="btn btn-primary btn-lg">Book a Discovery Call →</a>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="section-head reveal">
+      <span class="kicker">Contact</span>
+      <h2>Let's <span class="accent">Connect</span></h2>
+      <p>Have a project in mind or simply want to explore how digital marketing can support your business? Fill out the form below, and I'll get back to you to discuss your goals and the best way to move forward.</p>
+    </div>
+
+    <div class="contact-grid">
+      <aside class="contact-info reveal">
+        <h3>Reach out directly</h3>
+        <a class="contact-item" href="mailto:mdsohail6056@gmail.com">
+          <span class="ci-icon">✉️</span>
+          <div><small>Email</small><strong>mdsohail6056@gmail.com</strong></div>
+        </a>
+        <a class="contact-item" href="https://www.linkedin.com/in/mohammed-sohail-sayyed" target="_blank" rel="noopener">
+          <span class="ci-icon">in</span>
+          <div><small>LinkedIn</small><strong>mohammed-sohail-sayyed</strong></div>
+        </a>
+        <div class="contact-item static">
+          <span class="ci-icon">⏱️</span>
+          <div><small>Typical Response</small><strong>Within 24 hours</strong></div>
+        </div>
+      </aside>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required placeholder="Your full name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="you@example.com" />
+          </label>
+        </div>
+        <label>
+          <span>Company (optional)</span>
+          <input type="text" name="company" placeholder="Company or brand name" />
+        </label>
+        <label>
+          <span>What do you need help with?</span>
+          <select name="service">
+            <option>Website Design &amp; Development</option>
+            <option>Search Engine Optimization</option>
+            <option>Performance Marketing</option>
+            <option>Graphic Design, Video &amp; Content</option>
+            <option>Social Media Management</option>
+            <option>Monthly Retainer</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>
+          <span>Tell me about your project</span>
+          <textarea name="message" rows="5" required placeholder="Share your goals, timeline, and anything else that helps me understand your business."></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message →</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <span class="logo-mark">MS</span>
+          <span class="logo-text">Mohammed <em>Sohail</em></span>
+        </a>
+        <p>Digital Marketing Consultant helping businesses grow through websites, SEO, performance marketing and creative content.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Website Packages</a></li>
+          <li><a href="#monthly">Monthly Plans</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#campaigns">Campaign Results</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:mdsohail6056@gmail.com">mdsohail6056@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/mohammed-sohail-sayyed" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Mohammed Sohail Sayyed. All rights reserved.</p>
+      <p>Built with strategy, code &amp; care.</p>
+    </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Fixed scroll to section with proper offset
-    function scrollToSection(id) {
-      const element = document.getElementById(id);
-      if (element) {
-        const navHeight = document.getElementById('navbar').offsetHeight;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - navHeight - 20;
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-      closeMobileMenu();
-    }
-
-    // Mobile menu toggle
-    function toggleMenu() {
-      document.getElementById('hamburger').classList.toggle('open');
-      document.getElementById('mobileMenu').classList.toggle('open');
-    }
-    function closeMobileMenu() {
-      document.getElementById('hamburger').classList.remove('open');
-      document.getElementById('mobileMenu').classList.remove('open');
-    }
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-      var nav = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-
-    // Fade-in on scroll
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.ms-fade-in').forEach(function(el) {
-      observer.observe(el);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
